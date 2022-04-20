@@ -48,6 +48,7 @@
         android:inputType="number|textPersonName"
         android:textAlignment="center"
         android:textSize="12sp"
+        android:text="0"
         app:layout_constraintBottom_toTopOf="@+id/servoButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

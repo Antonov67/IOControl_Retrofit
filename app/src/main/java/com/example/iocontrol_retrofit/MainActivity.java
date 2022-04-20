@@ -88,13 +88,15 @@ public class MainActivity extends AppCompatActivity {
         servoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int angle = Integer.parseInt(angleValue.getText().toString());
-                if (angle >= 0 && angle <=180) {
-                    sendData("angle", angleValue.getText().toString());
-                }
-                else {
+                try {
+                    int angle = Integer.parseInt(angleValue.getText().toString());
+                    if (angle >= 0 && angle <=180) {
+                        sendData("angle", angleValue.getText().toString());
+                    }
+                }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Угол введен неправильно!", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
