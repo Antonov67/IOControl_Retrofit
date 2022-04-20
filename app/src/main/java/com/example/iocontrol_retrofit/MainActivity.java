@@ -82,11 +82,21 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     sendData("leak", "0");
                 }
-
-
             }
         });
 
+        servoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int angle = Integer.parseInt(angleValue.getText().toString());
+                if (angle >= 0 && angle <=180) {
+                    sendData("angle", angleValue.getText().toString());
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"Угол введен неправильно!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
     }
     //отправка команды на сервер
